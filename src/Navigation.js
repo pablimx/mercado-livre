@@ -6,6 +6,8 @@ const Stack = createStackNavigator();
 
 import Home from "./view/Home";
 import Login from "./view/Login";
+import Signup from "./view/Signup";
+import RedefinePass from "./view/RedefinePass";
 
 export default function Navigation() {
   return (
@@ -13,6 +15,8 @@ export default function Navigation() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Sign Up" component={Signup} />
+        <Stack.Screen name="Redefine Pass" component={RedefinePass} />
       </Stack.Navigator>
     </NavigationContainer>
   );

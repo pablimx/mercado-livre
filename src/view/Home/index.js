@@ -11,7 +11,7 @@ export default function Home({ navigation }) {
       <Button style="outline" onPress={() => navigation.navigate("Login")}>
         <Text>Entrar</Text>
       </Button>
-      <Button>
+      <Button onPress={() => navigation.navigate("Signup")}>
         <Text style={styles.text_white}>Criar Conta</Text>
       </Button>
     </View>

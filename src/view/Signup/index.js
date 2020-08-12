@@ -4,7 +4,7 @@ import styles from "./styles";
 import Button from "../../components/Button";
 import logo from "../../../assets/logo.png";
 
-export default function Login({ navigation }) {
+export default function Signup() {
   return (
     <View style={styles.container}>
       <Image source={logo} />
@@ -27,12 +27,6 @@ export default function Login({ navigation }) {
       <Button style="outline" onPress={false}>
         <Text style={styles.text_primary}>Entrar</Text>
       </Button>
-      <TouchableOpacity
-        onPress={() => navigation.navigate("Redefine Pass")}
-        style={styles.redefinePass}
-      >
-        <Text style={styles.text_primary}>Esqueceu sua senha?</Text>
-      </TouchableOpacity>
     </View>
   );
 }
