@@ -24,7 +24,7 @@ export default function Login({ navigation }) {
           style={styles.input}
         />
       </View>
-      <Button style="outline" onPress={false}>
+      <Button style="outline" onPress={() => navigation.navigate("Index")}>
         <Text style={styles.text_primary}>Entrar</Text>
       </Button>
       <TouchableOpacity
