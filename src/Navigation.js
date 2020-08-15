@@ -22,11 +22,7 @@ export default function Navigation() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} options={optionHeader} />
         <Stack.Screen name="Login" component={Login} options={optionHeader} />
-        <Stack.Screen
-          name="Sign Up"
-          component={Signup}
-          options={optionHeader}
-        />
+        <Stack.Screen name="Signup" component={Signup} options={optionHeader} />
         <Stack.Screen
           name="Redefine Pass"
           component={RedefinePass}
