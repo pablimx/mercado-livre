@@ -3,7 +3,7 @@ import { View, Text, Image, TextInput, Alert } from "react-native";
 import styles from "./styles";
 import Button from "../../components/Button";
 import logo from "../../../assets/logo.png";
-import { set } from "react-native-reanimated";
+import firebase from "../../services/firebase";
 
 export default function Signup() {
   const [user, setUser] = useState();
@@ -11,7 +11,15 @@ export default function Signup() {
 
   function handleSignup() {
     if ((user, pass)) {
-      Alert.alert("Ok", "tudo certo");
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(user, pass)
+        .then((response) => {
+          Alert.alert("Ok", "Cadastro realizado com sucesso");
+        })
+        .catch((erro) => {
+          Alert.alert("Ops", "Não foi possível criar seu cadastro");
+        });
     } else {
       Alert.alert("Erro", "Preencha e-mail e senha");
     }
@@ -32,7 +40,7 @@ export default function Signup() {
           style={styles.input}
         />
         <TextInput
-          name="user"
+          name="pass"
           keyboardType="email-address"
           autoCapitalize="none"
           secureTextEntry={true}
