@@ -9,17 +9,24 @@ import {
 import { AntDesign } from "@expo/vector-icons";
 import styles from "./styles";
 import Navigation from "./Navigation";
+import Profile from "../../components/Profile";
+import logoMP from "../../assets/mp-teste.png";
 
 const Drawer = createDrawerNavigator();
 
 const HeaderDrawer = () => {
   return (
-    <View>
-      <View>
-        <Text>Olá</Text>
+    <View style={styles.drawer_header}>
+      <View style={styles.user}>
+        <Profile />
+        <View>
+          <Text>Olá João</Text>
+          <Text>Nível 3 - Mercado Pontos</Text>
+        </View>
       </View>
-      <View>
-        <Text>Mercado Pago</Text>
+      <View style={styles.mercado_pago}>
+        <Image source={logoMP} />
+        <Text style={styles.mercado_pago_text}>Mercado Pago</Text>
       </View>
     </View>
   );
@@ -30,7 +37,7 @@ const DrawerContent = ({ navigation }) => {
     {
       id: 1,
       name: "Home",
-      action: "Home",
+      action: "Main",
       icon: <AntDesign name="home" size={24} color="black" />,
     },
     {
@@ -41,9 +48,9 @@ const DrawerContent = ({ navigation }) => {
     },
   ];
   return (
-    <View>
+    <View style={styles.drawer_content}>
       <HeaderDrawer />
-      <View>
+      <View style={styles.drawer_body}>
         <DrawerContentScrollView>
           {listMenuDrawer.map((menu) => (
             <DrawerItem
