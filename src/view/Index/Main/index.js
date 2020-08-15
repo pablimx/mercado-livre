@@ -5,8 +5,8 @@ import styles from "./styles";
 
 export default function Main({ navigation }) {
   return (
-    <ScrollView>
+    <View style={styles.container}>
       <Text>Página Principal</Text>
-    </ScrollView>
+    </View>
   );
 }
